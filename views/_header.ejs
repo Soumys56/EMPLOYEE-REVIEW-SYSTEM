@@ -1,0 +1,41 @@
+<nav class="menu2">
+    <% if(locals.user){%>
+        <% if(locals.user. isAdmin){%>
+            <div class="logOut">
+                 <a href="/"><small>Home</small></a>
+                <a href="/admin/adminWork"> <small>Assign Work</small> </a>
+                <a href="/admin/view-employee"> <small>Employees</small> </a>
+                <a href="/admin/addEmployee"> <small> Add Employee </small> </a>
+                <a href="/admin/destroysession"> <small>LogOut </a> </small>
+                <span class="nameOfUser">
+                    <%= locals.user.name%>
+                </span>
+            </div>
+
+            <%} else{%>
+                <div class="logOut">
+                    <div class="adminPass">
+                        <form action="/user/makeAdmin" method="post">
+                            <input name="admin_password" type="password" placeholder="Password">
+                            <button type="submit" class="submitHomeButton"> Enter as Admin</button>
+                        </form>
+                    </div>
+                    <a href="/admin/destroysession"> <small>LogOut</small> </a>
+                    <span class="nameOfUser">
+                        <%= locals.user.name%>
+                    </span>
+                </div>
+
+
+
+                <%}%>
+
+                    <%}else{%>
+                        <div class="logOut">
+                            <a href="/user/signin">Sign In</a>
+                            <a href="/user/signup">Sign Up</a>
+
+                        </div>
+
+                        <%}%>
+</nav>

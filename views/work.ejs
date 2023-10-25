@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="/css/work.css">
+<div class="work_container">
+    <div class="first_form">
+        <h4>Assign work set reviewes and Resipent</h4>
+        <div class="tesk_form">
+            
+            <form class="form_container" action="/admin/setReviewes" method="post">
+                <h4>Assign Task</h4>
+                <div>
+                    <label>set reviewer</label>
+                    <select class="form-select" aria-label="Default select example" name="sender">
+                        <option selected>Sender</option>
+                        <% for(let i=0; i<employee.length ; i++){ %>
+
+                            <option  class="option_field"value=<%=employee[i].id %> > <%= employee[i].name %></option>
+
+                            <%}%>
+                    </select>
+                </div>
+                <div>
+                    <label>Select Recipent Employee</label>
+                    <select class="form-select form-select" aria-label="Default select example" name="reciver">
+                        <option selected>Reciver</option>
+                        <% for(let i=0; i<employee.length ; i++){ %>
+
+                            <option value=<%=employee[i].id %> > <%= employee[i].name %>
+                            </option>
+
+                            <%}%>
+                    </select>
+                </div>
+                <div class="submitButtons">
+                    <button type="submit">Submit</button>
+                </div>
+
+
+
+            </form>
+        </div>
+
+  <!-- make admin to any Employee -->
+  <div class="tesk_form">
+            
+    <form class="form_container" action="/admin/newAdmin" method="post">
+        <h4>Make Admin to any employee </h4>
+        <div>
+           
+            <select class="form-select" aria-label="Default select example" name="newuser">
+                <option selected>Select to make admin</option>
+                <% for(let i=0; i<employee.length ; i++){%>
+
+                    <option   class="option_field"value=<%=employee[i].id %> > <%= employee[i].name %></option>
+
+                    <%}%>
+            </select>
+        </div>
+       
+        <div class="submitButtons">
+            <button type="submit">Submit</button>
+        </div>
+
+
+
+    </form>
+</div>
+
+    </div>
+
+
+
+</div>
