@@ -1,6 +1,6 @@
 {
    "engines": {
-    "node": ">= 21.1.0"
+    "node": ">=14.20.1"
   },
   "name": "employee-review-system",
   "version": "1.0.0",
