@@ -1,7 +1,10 @@
-const env=require('../config/enviroment')
+// const env=require('../config/enviroment')
+require('dotenv').config()
 var mongoose = require('mongoose');
 //Set up default mongoose connection
-var mongoDB = `mongodb://127.0.0.1/${env. db}`;
+// var mongoDB = `mongodb://127.0.0.1/${env. db}`;
+var mongoDB=process.env.MONGO_DB_URL;
+
 mongoose.connect(mongoDB, { useNewUrlParser: true });
  //Get the default connection
 var db = mongoose.connection;
