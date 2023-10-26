@@ -1,4 +1,5 @@
 
+require('dotenv').config();
 
 //require express
 const express=require('express');
@@ -6,7 +7,8 @@ const app=express();
 const env=require('./config/enviroment');
 const path=require('path');
 const expressLayouts=require('express-ejs-layouts');
-const port=8000;
+
+ const port=process.env.PORT
 const db=require('./config/mongoose');
 // Creating session
 const session = require('express-session');
